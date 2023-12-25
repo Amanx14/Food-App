@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.logo {
+    width: 140px;
+    background-size: cover;
+    padding: 10px;
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}   
+
+.res-card {
+    width: 210px;
+    margin: 5px 5px;
+    padding: 5px; 
+}
+
+.res-card h2, h4 {
+    line-height: 4.5vh;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.filter-btn {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-logo {
+    width: 100%;
+}
+
