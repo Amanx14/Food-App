@@ -1,10 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from '../utils/mockData'
 import { useState, useEffect } from "react";
 
 const Body = () => {
     // State Variable
-    const [listOfRestaurants, setListofRestaurants] = useState(resList);
+    const [listOfRestaurants, setListofRestaurants] = useState([]);
 
     // const arr = useState(resList);
     // const [listOfRestaurants, setListofRestaurants] = arr;
@@ -18,11 +17,17 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch('https://www.swiggy.com/mapi/homepage/getCards?lat=28.622405992933555&lng=77.36806547034614'); // using Async and await to resolve promise
+        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.6286706&lng=77.36402570000001"); // using Async and await to resolve promise
 
         const json = await data.json();
 
         console.log(json);
+
+        setListofRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants); 
+    }
+
+    if(listOfRestaurants.length === 0) {
+        return <h1>Loading......</h1>
     }
 
     return (
