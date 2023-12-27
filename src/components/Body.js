@@ -11,14 +11,8 @@ const Body = () => {
 
     // Use Effect
 
-    console.log("Body Rendered")
-
-    useEffect(()=>{
-        fetchData();
-    }, []);
-
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.6286706&lng=77.36402570000001"); // using Async and await to resolve promise
+        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=12.9351929&lng=77.62448069999999"); // using Async and await to resolve promise
 
         const json = await data.json();
 
@@ -29,9 +23,13 @@ const Body = () => {
         setFilteredRestaurant(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
     }
 
-    if(listOfRestaurants.length === 0) {
-        return <Shimmer/>
-    }
+    useEffect(()=>{
+        fetchData();
+    }, []);
+
+    // if(listOfRestaurants.length === 0) {
+    //     return <Shimmer/>
+    // }
 
     return (
         <div className="body">
