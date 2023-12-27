@@ -9,11 +9,6 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
-    // const arr = useState(resList);
-    // const [listOfRestaurants, setListofRestaurants] = arr;
-    // const listOfRestaurants = arr[0];
-    // const setListofRestaurants = arr[1];
-    
     // Use Effect
 
     console.log("Body Rendered")
@@ -63,8 +58,11 @@ const Body = () => {
                     const filteredList = listOfRestaurants.filter(
                         res => res.info.avgRating > 4.5
                     );    
-                    setListofRestaurants(filteredList);
+
+                    setFilteredRestaurant(filteredList);
+
                     console.log(filteredList);
+
                 }}>Top Rated Restaurants</button>
             </div>
             <div className="res-container">
