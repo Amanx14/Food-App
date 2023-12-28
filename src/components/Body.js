@@ -12,8 +12,11 @@ const Body = () => {
     // Use Effect
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=12.9351929&lng=77.62448069999999"); // using Async and await to resolve promise
-
+        const data = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D12.9351929%26lng%3D77.62448069999999"); // using Async and await to resolve promise
+        
+        // if (!data.ok) {
+        //     throw new Error('Network response was not ok');
+        // }
         const json = await data.json();
 
         console.log(json);
@@ -27,9 +30,9 @@ const Body = () => {
         fetchData();
     }, []);
 
-    // if(listOfRestaurants.length === 0) {
-    //     return <Shimmer/>
-    // }
+    if(listOfRestaurants.length === 0) {
+        return <Shimmer/>
+    }
 
     return (
         <div className="body">
