@@ -4,7 +4,7 @@ import { CAT_ERROR } from "../utils/constants";
 const Error = ()=> {
     const err = useRouteError();
     console.log(err);
-    
+     
     const styleCat = {
         height : "500px",
         width : "500px"

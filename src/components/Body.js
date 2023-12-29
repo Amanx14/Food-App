@@ -12,7 +12,7 @@ const Body = () => {
     // Use Effect
 
     const fetchData = async () => {
-        const data = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D12.9351929%26lng%3D77.62448069999999"); // using Async and await to resolve promise
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"); // using Async and await to resolve promise
         
         // if (!data.ok) {
         //     throw new Error('Network response was not ok');
@@ -22,17 +22,17 @@ const Body = () => {
         console.log(json);
 
         // Conditional Rendering
-        setListofRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants); 
-        setFilteredRestaurant(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        setListofRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
+        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     useEffect(()=>{
         fetchData();
     }, []);
 
-    if(listOfRestaurants.length === 0) {
-        return <Shimmer/>
-    }
+    // if(listOfRestaurants.length === 0) {
+    //     return <Shimmer/>
+    // }
 
     return (
         <div className="body">

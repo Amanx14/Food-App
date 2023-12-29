@@ -6,7 +6,7 @@ const styleCard = {
 
 const RestaurantCard = (props) => {
     const {resData} = props; // destructuring
-    const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime} = resData.info // optional chaining
+    const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime} = resData?.info // optional chaining
 
     return (
         <div className="res-card" style={styleCard}>
