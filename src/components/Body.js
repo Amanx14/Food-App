@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     // State Variable
@@ -12,18 +14,16 @@ const Body = () => {
     // Use Effect
 
     const fetchData = async () => {
-        const data = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D12.9351929%26lng%3D77.62448069999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"); // using Async and await to resolve promise
+        const response = await axios.get("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D12.9351929%26lng%3D77.62448069999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"); // using Async and await to resolve promise
         
-        // if (!data.ok) {
-        //     throw new Error('Network response was not ok');
-        // }
-        const json = await data.json();
+        
+        const data = await response.data;
 
-        console.log(json);
+        console.log(data);
 
         // Conditional Rendering
-        setListofRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
-        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListofRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
+        setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     useEffect(()=>{
@@ -68,9 +68,11 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {
-                    filteredRestaurant.map((restaurant)=> {
-                        return <RestaurantCard key = {restaurant.info.id} resData={restaurant}/>
-                    })   
+                    filteredRestaurant.map((restaurant)=> (
+                        <Link key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+                            <RestaurantCard resData={restaurant}/>
+                        </Link>
+                    ))   
                 }
             </div>
         </div>

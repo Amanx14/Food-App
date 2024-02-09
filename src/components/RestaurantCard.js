@@ -6,7 +6,7 @@ const styleCard = {
 
 const RestaurantCard = (props) => {
     const {resData} = props; // destructuring
-    const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime} = resData?.info // optional chaining
+    const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime, costForTwo} = resData?.info // optional chaining
 
     return (
         <div className="res-card" style={styleCard}>
@@ -15,6 +15,7 @@ const RestaurantCard = (props) => {
             <h4>{cuisines.join(", ")}</h4>
             <h4>{avgRating}</h4>
             <h4>{deliveryTime}</h4>
+            <h4>{costForTwo}</h4>
         </div>
     );
 }
