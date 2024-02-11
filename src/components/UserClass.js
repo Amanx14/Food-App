@@ -1,42 +1,62 @@
 import React from "react";
+import axios from "axios";
 
 class UserClass extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            count: 0,
-            count2 : 5
+            userInfo : null
         }
 
-        console.log(this.props.name, 'Child constructor');
+        // console.log(this.props.name, 'Child constructor');
     }
 
-    componentDidMount() {
-        console.log(this.props.name, "Child Component Did Mount");
-
+    async componentDidMount() {
+        // console.log(this.props.name, "Child Component Did Mount");
         // API call
+
+        // const response = await axios.get("https://api.github.com/users/amanx14");
+        // const data = await response.data;
+
+        // console.log(data);
+
+        // this.setState({
+        //     userInfo : data
+        // })
+
+        this.x = setInterval(() => {
+            console.log("Namaste React OP");
+        }, 1000);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // if(this.state.count !== prevState.count) {
+        //     //
+        // }
+        // if(this.state.count2 !== prevState.count2) {
+        //     //
+        // }
+        console.log("Component Did Update");
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.x);
     }
 
     render() {
-        console.log(this.props.name, "Child Render");
-        const { name, location, contacts } = this.props;
-        const { count, count2 } = this.state;
+        // console.log(this.props.name, "Child Render");
+        if(this.state.userInfo === null) {
+            return <h1>Loading...</h1>
+        }
+
+        const {name, location, avatar_url} = this.state.userInfo;
+
         return (
             <div className="user-card">
+                <img src={avatar_url} alt="" />
                 <h2>Name - {name}</h2>
-                <h3>Location - {location}</h3>
-                <h3>Contacts - {contacts}</h3>
-
-                <h2>Count 1 : {count}</h2>
-                <h2>Count 2 : {count2}</h2>
-
-                <button onClick={()=> {
-                    this.setState({
-                        count : this.state.count + 1,
-                        count2 : this.state.count2 + 2,
-                    })
-                }}>Increase Count</button> <br />
+                <h2>Location - {location}</h2>
             </div>
         );
     }

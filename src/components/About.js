@@ -1,24 +1,29 @@
 import UserClass from "./UserClass";
-import {Component} from "react";
+import User from "./User";
+import { Component } from "react";
 
 class About extends Component {
     constructor(props) {
         super(props);
-        console.log('Parent Constructor');
+        // console.log('Parent Constructor');
     }
 
-    componentDidMount() {
-        console.log("Parent Component Did Mount");
+    componentDidMount() { 
+        // console.log("Parent Component Did Mount");
+    }
+
+    componentWillUnmount() {
+        // console.log("Parent Component Did unmount");
     }
 
     render() {
-        console.log("Parent Render");
+        // console.log("Parent Render");
         return (
             <div>
                 <h1>About</h1>
                 <h2>This is about class component</h2> <br />
                 <UserClass name="First" location="Dhanbad" contacts="LinkedIn" />
-                <UserClass name="Second" location="Jharia" contacts="Twitter" />
+                {/* <User name="Sec" location="Delhi" contacts="Twitter" /> */}
             </div>
         );
     }
