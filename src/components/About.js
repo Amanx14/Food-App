@@ -23,7 +23,7 @@ class About extends Component {
                 <h1>About</h1>
                 <h2>This is about class component</h2> <br />
                 <UserClass name="First" location="Dhanbad" contacts="LinkedIn" />
-                {/* <User name="Sec" location="Delhi" contacts="Twitter" /> */}
+
             </div>
         );
     }

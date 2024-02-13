@@ -1,32 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Shimmer from "./Shimmer";
-import { MENU_API_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null);
-
     const param = useParams();
     // console.log(param);
+    
     const {resId} = param;
-
-    async function fetchMenu() {
-        try {
-            const response = await axios.get(MENU_API_URL + resId);
-
-            const data = await response.data;
-
-            setResInfo(data);
-        }
-        catch (err) {
-            console.log(err.message);
-        }
-    }
-
-    useEffect(() => {
-        fetchMenu();
-    }, [])
+    
+    const resInfo = useRestaurantMenu(resId); // custom hook
 
     if (resInfo === null) {
         return <Shimmer />

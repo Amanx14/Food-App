@@ -7,15 +7,7 @@ const User = (props) => {
     console.log(props);
 
     useEffect(() => {
-        // API call
-        const x = setInterval(()=> {
-            console.log("Namste React");
-        }, 1000);
-
-
-        return ()=> {
-            clearInterval(x);
-        }
+        
     }, []);
 
     return (

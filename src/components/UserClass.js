@@ -16,28 +16,18 @@ class UserClass extends React.Component {
         // console.log(this.props.name, "Child Component Did Mount");
         // API call
 
-        // const response = await axios.get("https://api.github.com/users/amanx14");
-        // const data = await response.data;
+        const response = await axios.get("https://api.github.com/users/amanx14");
+        const data = await response.data;
 
-        // console.log(data);
+        console.log(data);
 
-        // this.setState({
-        //     userInfo : data
-        // })
-
-        this.x = setInterval(() => {
-            console.log("Namaste React OP");
-        }, 1000);
+        this.setState({
+            userInfo : data
+        })
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        // if(this.state.count !== prevState.count) {
-        //     //
-        // }
-        // if(this.state.count2 !== prevState.count2) {
-        //     //
-        // }
-        console.log("Component Did Update");
+    componentDidUpdate() {
+        // console.log("Component Did Update"); 
     }
 
     componentWillUnmount() {
