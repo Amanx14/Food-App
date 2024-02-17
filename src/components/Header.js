@@ -11,30 +11,30 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src={LOGO_URL} alt="" />
+        <div className="flex justify-between shadow-lg px-3 mb-2 sm:bg-slate-50">
+            <div className="logo-container p-2 w-[140px]">
+                <img className="w-40 rounded-2xl p-2" src={LOGO_URL} alt="" />
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
+            <div className="flex items-center">
+                <ul className="flex gap-8 font-semibold items-center">
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">
                         Online Status {onlineStatus ? '✅' : '❌'}
                     </li>
-                    <li>
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">
                         <Link to="/grocery">Grocery</Link>
                     </li>
-                    <li>
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">
                         <Link to="/about">About</Link>
                     </li>
-                    <li>
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">
                         <Link to="/contact">Contact Us</Link>
                     </li>
 
-                    <li>Cart</li>
-                    <button className="login" onClick={() => {
+                    <li className="p-2 rounded-md hover:bg-green-400 hover:text-white">Cart</li>
+                    <button className="bg-green-500 px-4 py-2 rounded-md text-white" onClick={() => {
                         if (buttonName === 'Login') {
                             setButtonName("Logout");
                         }

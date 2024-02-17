@@ -46,13 +46,13 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
+            <div className="filter flex justify-between">
                 <div className="search">
-                    <input type="text" className="search-box" value={searchText}
+                    <input type="text" className="border border-solid border-black w-[300px] rounded-sm mx-5 p-[6px] focus:outline-none focus:border-green-300" value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
-                    <button className="search-btn"
+                    <button className="px-4 py-2 rounded-md bg-green-500 m-4 text-white hover:scale-105 duration-150"
                         onClick={() => {
                             // Filter the restraunt list
 
@@ -64,7 +64,8 @@ const Body = () => {
 
                         }}>Search</button>
                 </div>
-                <button className="filter-btn"
+    
+                <button className="px-4 py-2 rounded-md bg-green-500 m-4 text-white hover:scale-105 hover:bg-green-600 duration-300"
                     onClick={() => {
                         const filteredList = listOfRestaurants.filter(
                             res => res.info.avgRating >= 4.5
@@ -76,7 +77,7 @@ const Body = () => {
 
                     }}>Top Rated Restaurants</button>
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
                 {
                     filteredRestaurant.map((restaurant) => (
                         <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
