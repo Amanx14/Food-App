@@ -16,4 +16,17 @@ const RestaurantCard = (props) => {
     );
 }
 
+// Higher Order Components
+
+export const withHigherRating = (RestaurantCard) => {
+    return (props)=> {
+        return (
+            <div className="relative">
+                <label className="absolute left-1 bg-slate-900 text-white z-auto m-2 px-3 rounded-sm">Elite</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+
 export default RestaurantCard;

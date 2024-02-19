@@ -6,4 +6,6 @@ const LOGO_URL = 'https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.co
 
 export const MENU_API_URL = "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D12.9351929%26lng%3D77.62448069999999%26restaurantId%3D";
 
+export const SWIGGY_MAIN_API = "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D12.9351929%26lng%3D77.62448069999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING";
+
 export default LOGO_URL;
