@@ -43,7 +43,7 @@ const Body = () => {
     }
 
     return (
-        <div className="body">
+        <div className="body mx-auto">
             {listOfRestaurants.length === 0 && <Shimmer />}
             {listOfRestaurants.length > 0 && (
                 <div className="filter flex justify-between">
