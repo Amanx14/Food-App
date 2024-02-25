@@ -26,7 +26,7 @@ const Body = () => {
         // Conditional Rendering
         setListofRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
+        // console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
     }
 
 
