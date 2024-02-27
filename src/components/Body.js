@@ -18,15 +18,19 @@ const Body = () => {
     // Use Effect
 
     const fetchData = async () => {
-        const response = await axios.get(SWIGGY_MAIN_API); // using Async and await to resolve promise
+        try {
+            const response = await axios.get(SWIGGY_MAIN_API); // using Async and await to resolve promise
 
+            const data = await response.data;
 
-        const data = await response.data;
-
-        // Conditional Rendering
-        setListofRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        // console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
+            // Conditional Rendering
+            setListofRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            // console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
+        }
+        catch(error) {
+            console.log("Something went wrong please try again.");
+        }
     }
 
 
@@ -87,7 +91,7 @@ const Body = () => {
 
                             {
                                 restaurant.info.avgRating >= 4.5 ? (<HighRatedRestraunt resData={restaurant} />)
-                                :    (<RestaurantCard resData={restaurant} />)
+                                    : (<RestaurantCard resData={restaurant} />)
                             }
 
                         </Link>
