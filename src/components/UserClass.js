@@ -6,7 +6,7 @@ class UserClass extends React.Component {
         super(props)
 
         this.state = {
-            userInfo : null
+            userInfo: null
         }
 
         // console.log(this.props.name, 'Child constructor');
@@ -16,14 +16,19 @@ class UserClass extends React.Component {
         // console.log(this.props.name, "Child Component Did Mount");
         // API call
 
-        const response = await axios.get("https://api.github.com/users/amanx14");
-        const data = await response.data;
+        try {
+            const response = await axios.get("https://api.github.com/users/amanx14");
+            const data = await response.data;
 
-        console.log(data);
+            console.log(data);
 
-        this.setState({
-            userInfo : data
-        })
+            this.setState({
+                userInfo: data
+            })
+        }
+        catch(error) {
+            console.log('Something went wrong.');
+        }
     }
 
     componentDidUpdate() {
@@ -36,11 +41,11 @@ class UserClass extends React.Component {
 
     render() {
         // console.log(this.props.name, "Child Render");
-        if(this.state.userInfo === null) {
+        if (this.state.userInfo === null) {
             return <h1>Loading...</h1>
         }
 
-        const {name, location, avatar_url} = this.state.userInfo;
+        const { name, location, avatar_url } = this.state.userInfo;
 
         return (
             <div className="user-card">
