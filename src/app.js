@@ -3,21 +3,35 @@ import Header from './components/Header';
 import Body from './components/Body';
 
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
+import UserContext from './utils/UserContext';
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const About = lazy(() => import('./components/About'));
 
 const AppLayout = () => {
+    const [userName, setUserName] = useState();
+    //authentication 
+
+    useEffect(() => {
+        // Make an API call and send username and password
+        const data = {
+            name: "Amanx14",
+        }
+        setUserName(data.name);
+    }, []);
+
     return (
-        <div className="app">
-            <Header />
-            <Outlet /> {/* Its Like a tunnel isme other components load honge */}
-        </div>
+        <UserContext.Provider value={{loggedInUser : userName, setUserName}}> 
+            <div className="app">
+                <Header />
+                <Outlet /> {/* Its Like a tunnel isme other components load honge */}
+            </div>
+        </UserContext.Provider>
     );
 }
 
@@ -28,7 +42,7 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body /> 
+                element: <Body />
             },
             {
                 path: "/about",
@@ -41,7 +55,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/restaurants/:resId",
-                element : <RestaurantMenu />
+                element: <RestaurantMenu />
             },
             {
                 path: "/grocery",

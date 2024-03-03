@@ -1,10 +1,11 @@
 import RestaurantCard, { withHigherRating } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { SWIGGY_MAIN_API } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     // State Variable
@@ -28,7 +29,7 @@ const Body = () => {
             setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             // console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
         }
-        catch(error) {
+        catch (error) {
             console.log("Something went wrong please try again.");
         }
     }
@@ -45,6 +46,8 @@ const Body = () => {
             <h1> Looks like you're offline!</h1> <h2> Please check your internet connection.</h2>
         </>
     }
+
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     return (
         <div className="body mx-auto">
@@ -71,6 +74,9 @@ const Body = () => {
                         >
                             Search
                         </button>
+
+                        <label>User Name : </label>
+                        <input type="text" className="border border-solid border-black w-[300px] rounded-sm mx-5 p-[6px] focus:outline-none focus:border-green-300" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />
                     </div>
 
                     <button

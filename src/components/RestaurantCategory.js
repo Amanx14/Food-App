@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) => {
     // console.log("----------", data.itemCards, data.title);
     const { title, itemCards } = data;
 
@@ -16,7 +16,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
                     <span className="font-bold text-xl">{title}</span>
                     <span><i className="fa-solid fa-angle-down"></i></span>
                 </div>
-                {showItems && <ItemList items={itemCards} />}
+                {showItems && <ItemList items={itemCards} dummy={dummy} />}
             </div>
         </div>
     );
