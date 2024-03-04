@@ -14,7 +14,7 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
-    const HighRatedRestraunt = withHigherRating(RestaurantCard); // HIgher order
+    const HighRatedRestraunt = withHigherRating(RestaurantCard); // Higher order
 
     // Use Effect
 
