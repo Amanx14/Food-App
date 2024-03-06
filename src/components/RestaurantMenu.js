@@ -1,8 +1,8 @@
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
+import ResMenuShimmer from "./ResMenuShimmer";
 
 const RestaurantMenu = () => {
     const param = useParams();
@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(null);
 
     if (resInfo === null) {
-        return <Shimmer />
+        return <ResMenuShimmer />
     }
 
     const dummy = "Dummy Data";
