@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import LOGO_URL from "../utils/constants";
 
 import { Link } from 'react-router-dom';

@@ -18,7 +18,7 @@ const ItemList = ({ items, dummy }) => {
 
                     <div className="w-2/12 mr-3 flex flex-col" >
                         <img className="rounded-lg mx-1" src={CDN_URL + item.card.info.imageId} alt="" />
-                        <button className="px-2 rounded-md bg-slate-700 text-white shadow-lg">Add +</button>
+                        <button className="px-1 mt-1 rounded-md bg-slate-700 text-white shadow-lg">Add +</button>
                     </div>
 
 
