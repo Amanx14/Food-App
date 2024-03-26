@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
 
     const resInfo = useRestaurantMenu(resId); // custom hook
 
-    // console.log("resinfo", resInfo?.data);
+    console.log("resinfo", resInfo?.data);
 
     const [showIndex, setShowIndex] = useState(null);
 
@@ -23,9 +23,9 @@ const RestaurantMenu = () => {
 
     const dummy = "Dummy Data";
 
-    const { name, cuisines, costForTwoMessage } = resInfo?.data?.cards[0]?.card?.card?.info;
+    const { name, cuisines, costForTwoMessage } = resInfo?.data?.cards[2]?.card?.card?.info;
 
-    const categories = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => (
+    const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => (
         c.card?.["card"]?.["@type"].includes("ItemCategory")
     ));
 

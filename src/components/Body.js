@@ -22,12 +22,13 @@ const Body = () => {
         try {
             const response = await axios.get(SWIGGY_MAIN_API); // using Async and await to resolve promise
 
-            const data = await response.data;
+            const APIData = await response.data;
 
+            console.log(APIData);
             // Conditional Rendering
-            setListofRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-            setFilteredRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-            // console.log("line 31", listOfRestaurants.map((hotel) => hotel.info.avgRating));
+            setListofRestaurants(APIData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredRestaurant(APIData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            
         }
         catch (error) {
             console.log("Something went wrong please try again.");
