@@ -24,7 +24,7 @@ const Body = () => {
 
             const APIData = await response.data;
 
-            console.log(APIData);
+            console.log("Swiggy API", APIData);
             // Conditional Rendering
             setListofRestaurants(APIData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             setFilteredRestaurant(APIData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -58,6 +58,7 @@ const Body = () => {
                     <div className="search">
                         <input
                             type="text"
+                            data-testid = "SearchInput"
                             className="border border-solid border-black w-[300px] rounded-sm mx-5 p-[6px] focus:outline-none focus:border-green-300"
                             value={searchText}
                             onChange={(e) => {
@@ -72,9 +73,7 @@ const Body = () => {
                                 );
                                 setFilteredRestaurant(filteredRestaurant);
                             }}
-                        >
-                            Search
-                        </button>
+                        >Search Restaurant</button>
 
                         <label>User Name : </label>
                         <input type="text" className="border border-solid border-black w-[300px] rounded-sm mx-5 p-[6px] focus:outline-none focus:border-green-300" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />
@@ -100,7 +99,6 @@ const Body = () => {
                                 restaurant.info.avgRating >= 4.5 ? (<HighRatedRestraunt resData={restaurant} />)
                                     : (<RestaurantCard resData={restaurant} />)
                             }
-
                         </Link>
                     ))}
                 </div>
@@ -109,4 +107,4 @@ const Body = () => {
     );
 };
 
-export default Body;
+export default Body;    
