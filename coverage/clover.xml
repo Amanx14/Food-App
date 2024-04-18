@@ -1,48 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1713162914225" clover="3.2.0">
-  <project timestamp="1713162914225" name="All files">
-    <metrics statements="36" coveredstatements="21" conditionals="10" coveredconditionals="5" methods="13" coveredmethods="5" elements="59" coveredelements="31" complexity="0" loc="36" ncloc="36" packages="1" files="2" classes="2"/>
-    <file name="Body.js" path="C:\Users\ENS\Desktop\Food-App\src\components\Body.js">
-      <metrics statements="28" coveredstatements="14" conditionals="10" coveredconditionals="5" methods="10" coveredmethods="3"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="22" count="2" type="stmt"/>
-      <line num="23" count="2" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="29" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
-      <line num="39" count="2" type="stmt"/>
-      <line num="40" count="2" type="stmt"/>
-      <line num="43" count="2" type="stmt"/>
-      <line num="45" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="46" count="0" type="stmt"/>
-      <line num="51" count="2" type="stmt"/>
-      <line num="53" count="2" type="stmt"/>
-      <line num="65" count="0" type="stmt"/>
-      <line num="71" count="0" type="stmt"/>
-      <line num="72" count="0" type="stmt"/>
-      <line num="74" count="0" type="stmt"/>
-      <line num="79" count="0" type="stmt"/>
-      <line num="85" count="0" type="stmt"/>
-      <line num="86" count="0" type="stmt"/>
-      <line num="96" count="0" type="stmt"/>
-    </file>
-    <file name="RestaurantCard.js" path="C:\Users\ENS\Desktop\Food-App\src\components\RestaurantCard.js">
-      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-    </file>
+<coverage generated="1713435728104" clover="3.2.0">
+  <project timestamp="1713435728104" name="All files">
+    <metrics statements="59" coveredstatements="32" conditionals="18" coveredconditionals="6" methods="22" coveredmethods="7" elements="99" coveredelements="45" complexity="0" loc="59" ncloc="59" packages="2" files="6" classes="6"/>
+    <package name="components">
+      <metrics statements="58" coveredstatements="31" conditionals="18" coveredconditionals="6" methods="22" coveredmethods="7"/>
+      <file name="Body.js" path="C:\Users\ENS\Desktop\Food-App\src\components\Body.js">
+        <metrics statements="28" coveredstatements="14" conditionals="10" coveredconditionals="5" methods="10" coveredmethods="3"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="45" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+      </file>
+      <file name="Contact.js" path="C:\Users\ENS\Desktop\Food-App\src\components\Contact.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="ItemList.js" path="C:\Users\ENS\Desktop\Food-App\src\components\ItemList.js">
+        <metrics statements="7" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+      </file>
+      <file name="RestaurantCard.js" path="C:\Users\ENS\Desktop\Food-App\src\components\RestaurantCard.js">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+      <file name="RestaurantMenu.js" path="C:\Users\ENS\Desktop\Food-App\src\components\RestaurantMenu.js">
+        <metrics statements="13" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="appStore.js" path="C:\Users\ENS\Desktop\Food-App\src\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

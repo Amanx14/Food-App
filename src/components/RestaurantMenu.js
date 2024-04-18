@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
 
     const resInfo = useRestaurantMenu(resId); // custom hook
 
-    console.log("resinfo", resInfo?.data);
+    // console.log("resinfo", resInfo?.data);
 
     const [showIndex, setShowIndex] = useState(null);
 

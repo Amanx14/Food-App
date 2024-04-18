@@ -13,9 +13,9 @@ const ItemList = ({ items, dummy }) => {
 
     // console.log("line 4", items)
     return (
-        <div>
+        <div >
             {items ? items.map((item) => (
-                <div key={item.card.info.id} className="p-2 m-2 border-none rounded-md border-gray-400 text-left shadow-lg bg-slate-100 flex justify-between items-center">
+                <div data-testid="foodItems" key={item.card.info.id} className="p-2 m-2 border-none rounded-md border-gray-400 text-left shadow-lg bg-slate-100 flex justify-between items-center">
 
                     <div className="w-10/12">
                         <div className="mb-3">
